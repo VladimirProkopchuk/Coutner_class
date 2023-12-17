@@ -2,56 +2,48 @@
 #include <string>
 
 using namespace std;
+
+
 class counter {
+private:
+    int number = 1 ;
 public:
-    int number;
-    counter() {
-        number = 1;
-    }
-    int get_number() {
+    int getNumber(int value) {
         return number;
     }
-    counter(int number) {
-        set_counter(number);
-    }
-    void set_counter(int value) {
+    void setNumber(int value) {
         if (value > 1) number = value;
-        else value == 1;
     }
-    int plus(){
-        return number++;
+
+    void plus() {
+        number++;
     }
-    int minus() {
-        return number--;
+    void minus() {
+        number--;
     }
     void ravno() {
         std::cout << number << std::endl;
-    }   
+    }
 };
-    
 
-int main()
-{
+int main() {
     setlocale(LC_ALL, "Russian");
-    system("chcp 1251>nul");
-    counter create;
     int n;
-    string answer; string yes = "да";
-    std::cout << "Вы хотите указать начальное значение счётчика? Введите да или нет: ";
-    cin >> answer;
+    counter create;
+    string yes = "да"; std::string answer;
+    std::cout << "Вы хотите указать начальное значение счётчика?";
+    std::cin >> answer;
     if (answer == yes) {
         std::cout << "Введите начальное значение счётчика: ";
         std::cin >> n;
-         std::cout << std::endl;
-        create.set_counter(n);
+        create.setNumber(n);
     }
-    std::cout << create.get_number() << std::endl;
-    std::cout << create.number << std::endl;
+    else { create.getNumber(1); }
 
     char count;
     do {
         std::cout << "Введите команду ('+', '-', '=' или 'x'): ";
-        cin >> count;
+        std::cin >> count;
         if (count == '+') {
             create.plus();
         }
@@ -62,9 +54,6 @@ int main()
             create.ravno();
         }
     } while (count != 'x'); {
-       
+
     }
 }
-
-
-
