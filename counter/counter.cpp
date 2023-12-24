@@ -21,9 +21,6 @@ public:
     void minus() {
         number--;
     }
-    void ravno() {
-        std::cout << number << std::endl;
-    }
 };
 
 int main() {
@@ -51,7 +48,7 @@ int main() {
             create.minus();
         }
         else if (count == '=') {
-            create.ravno();
+           std::cout <<  create.getNumber(n) << std::endl;
         }
     } while (count != 'x'); {
         
