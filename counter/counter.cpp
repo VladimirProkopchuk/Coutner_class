@@ -27,10 +27,11 @@ public:
 };
 
 int main() {
-    setlocale(LC_ALL, "Russian");
-    int n;
+  //  setlocale(LC_ALL, "Rus");
+    system("chcp 1251>nul");
+    int n = 0;
     counter create;
-    string yes = "да"; std::string answer;
+    std::string yes = "да"; std::string answer;
     std::cout << "Вы хотите указать начальное значение счётчика?";
     std::cin >> answer;
     if (answer == yes) {
@@ -38,7 +39,6 @@ int main() {
         std::cin >> n;
         create.setNumber(n);
     }
-    else { create.getNumber(1); }
 
     char count;
     do {
@@ -54,6 +54,6 @@ int main() {
             create.ravno();
         }
     } while (count != 'x'); {
-
+        
     }
 }
