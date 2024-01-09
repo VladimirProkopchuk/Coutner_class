@@ -1,20 +1,19 @@
 ﻿#include <iostream>
 #include <string>
 
+
 using namespace std;
 
-
 class counter {
-private:
-    int number = 1 ;
+private: 
+	int number;
 public:
-    int getNumber(int value) {
-        return number;
-    }
-    void setNumber(int value) {
-        if (value > 1) number = value;
-    }
-
+	counter(int n) {
+		number = n ;
+	}
+	void ravno() {
+		cout << number << endl;
+	}
     void plus() {
         number++;
     }
@@ -24,19 +23,18 @@ public:
 };
 
 int main() {
-  //  setlocale(LC_ALL, "Rus");
     system("chcp 1251>nul");
-    int n = 0;
-    counter create;
-    std::string yes = "да"; std::string answer;
+    string answer; int n = 1;
+    string yes = "да";
     std::cout << "Вы хотите указать начальное значение счётчика?";
-    std::cin >> answer;
+    cin >> answer;
     if (answer == yes) {
+        
         std::cout << "Введите начальное значение счётчика: ";
         std::cin >> n;
-        create.setNumber(n);
+      
     }
-
+    counter create(n);
     char count;
     do {
         std::cout << "Введите команду ('+', '-', '=' или 'x'): ";
@@ -48,9 +46,9 @@ int main() {
             create.minus();
         }
         else if (count == '=') {
-           std::cout <<  create.getNumber(n) << std::endl;
+            create.ravno();
         }
     } while (count != 'x'); {
-        
+
     }
 }
